@@ -4,6 +4,9 @@ python:
 services:
  - mongodb
 install:
- - pip install coverage
+ - pip install -q coverage
  - python setup.py -q install
-script: "cd bnw/tests/test_server && python run.py"
+script:
+ - cd bnw/tests/test_server
+ - python run.py
+ - pip freeze
